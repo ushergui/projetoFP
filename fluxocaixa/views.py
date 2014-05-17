@@ -1,18 +1,19 @@
 from django.shortcuts import render, HttpResponseRedirect
 from datetime import datetime
-from caixas.models import Conta
 from pessoas.models import Pessoa
+from caixas.models import Conta
+
 
 def listarFluxos(request):
     pessoas = Pessoa.objects.all().order_by('nome')
 
-    return render(request, 'fluxos/listarFluxos.html', {'pessoas': pessoas})
+    return render(request, 'fluxos/fluxosListar.html', {'pessoas': pessoas})
 
 def pesquisarFluxos(request):
     if request.method == 'POST':
         pessoaBuscar = request.POST.get('pessoaBuscar')
-        dataBuscaInicio = datetime.strptime(request.POST.get('dataBuscaInicio', ''), '%d/%m/%Y %H:%M:%S')
-        dataBuscaFim = datetime.strptime(request.POST.get('dataBuscaFinal', ''), '%d/%m/%Y %H:%M:%S')
+        dataBuscaInicio = datetime.strptime(request.POST.get('dataBuscaInicio', ''), '%d/%m/%Y')
+        dataBuscaFim = datetime.strptime(request.POST.get('dataBuscaFinal', ''), '%d/%m/%Y')
         
         nome = Pessoa.objects.filter(id=pessoaBuscar)
         pessoas = Pessoa.objects.all().order_by('nome')
@@ -32,5 +33,5 @@ def pesquisarFluxos(request):
         except:
             contas = [Conta(descricao='erro')]
 
-        return render(request, 'fluxos/listarFluxos.html', {'contas': contas, 'nome':nome, 'pessoas': pessoas, 'totalreceber':totalreceber,'totalpagar':totalpagar})
+        return render(request, 'fluxos/fluxoListar.html', {'contas': contas, 'nome':nome, 'pessoas': pessoas, 'totalreceber':totalreceber,'totalpagar':totalpagar})
 
