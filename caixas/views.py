@@ -1,10 +1,3 @@
-# This Python file uses the following encoding: utf-8
-# ANOTAÇÃO PARA USAR CARACTERES ESPECIAIS AQUI. (MESMO PARA ANOTAÇÕES.)
-""" 
-@edsonlb
-https://www.facebook.com/groups/pythonmania/
-"""
-
 from django.shortcuts import render, HttpResponseRedirect
 from datetime import datetime
 from django.db.models import Q #Queries complexas

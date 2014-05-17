@@ -10,13 +10,10 @@
     <!-- CSS -->
     <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
     <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-    <!-- FIM CSS -->  
-
-
- 
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+     href="{{ STATIC_URL }}css/bootstrap-datetimepicker.min.css">
+    <!-- FIM CSS -->
 
   </head>
 
@@ -37,8 +34,8 @@
         <div class="collapse navbar-collapse" id="IDnavbar">
           <ul class="nav navbar-nav">
             <li><a href="/pessoas/"> <spam class="glyphicon glyphicon-user"></spam> Pessoas</a></li>
-            <li><a href="/caixas/"> <spam class="glyphicon glyphicon-inbox"></spam> Contas</a></li>
-            <li><a href="#"> <spam class="glyphicon glyphicon-stats"></spam> Fluxo de Caixa</a></li>
+            <li><a href="/caixas/"> <spam class="glyphicon glyphicon-usd"></spam> Contas</a></li>
+            <li><a href="#"> <spam class="glyphicon glyphicon-transfer"></spam> Fluxo de Caixa</a></li>
           </ul>
         </div>
       </div>
@@ -57,21 +54,15 @@
     <!-- RODAPE -->
     <footer>
       <div align="center">&copy; Edson Lopes</div>
+	  <div align="center">&copy; Guilherme Firmino Duarte</div>
     </footer>
     <!-- FIM RODAPE -->
 
     <!-- JavaScript -->
-    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-datetimepicker.min.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-datetimepicker.pt-BR.js"></script>
 
-    <script type="text/javascript">
-      $('#datetimepicker').datetimepicker({
-        format: 'dd/MM/yyyy hh:mm:ss',
-        language: 'pt-BR'
-      });
-    </script>
 
     <!-- FIM JavaScript -->
     
